@@ -1,0 +1,11 @@
+Les éléments de style physique
+Eléments b et strong : Le contenu suivant est important. La suite l'est moins. Mais ceci est également remarquable.
+
+Eléments i et em : Celui-ci est en caractères italiques et le suivant en caractères italiques gras.
+
+Celui-là est en caractères italiques et le suivant en caractères italiques gras.
+
+Le nième terme de la suite numérique est noté un.
+
+La fonction Java Script alert() permet d'afficher une boite d'alerte.
+Ne pas oublier de lire des ouvrages sur HTML 5 et CSS 3.

@@ -1,0 +1,123 @@
+/*
+one piece :
+#4AA4BA bleu
+#AE7558 brun
+#E18474 rouge
+#E0BF81 jaune
+#586359 gris foncé
+#CEECF8 bleu clair
+*/
+
+body{
+	font-family : Arial, sans-serif;
+	color : black;
+	text-align : justify ;
+	background-color : #586359;
+	margin: 0;
+}
+
+header{
+	background: #E0BF81;
+
+}
+
+header h1 {
+	line-height : 3em;
+	font-size : 2em;
+	font-weight : lighter;
+	text-align : center;
+	color : black;
+	margin: 0;
+}
+
+section {
+	background: rgba(255,255, 255, 0.2);
+
+}
+
+section > h1{
+	text-align : center;
+	background : #CEECF8;
+	color : black;
+	padding: 1em;
+	margin: 0;
+}
+
+section > p{
+	font-style : italic;
+}
+
+article{
+	background-color : #E18474;
+	margin-bottom: 10px;
+}
+
+article > h1{
+	line-height : 2em;
+	color: white;
+}
+
+h1{
+	color : white;
+	font-weight : lighter;
+	padding: 5px;
+}
+
+p {
+	background-color :  #E0BF81;
+	padding: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+div{
+	background-color : #AE7558;
+	background-image : url('images/chopper.png');
+	background-repeat : repeat-y;
+	background-position : right;
+	background-size : 3em;
+	padding: 5px;
+	margin-top: 10px;
+
+}
+
+div p {
+	font-variant : small-caps;
+	background :  rgba(255,255,255, 0.7);
+}
+figure{
+	text-align: center;
+	display: none;
+}
+figure img{
+	border: #CEECF8 solid 3px;
+	margin: 8px;
+	box-shadow: 10px 10px 3px rgba(0,0,0,0.5);
+}
+figcaption{
+	background-color: rgba(0,0,0,0.1);
+	color : white;
+	text-align: center;
+	padding: 5px;
+	margin: 8px;
+}
+
+footer {
+	background-color : #586359;
+	margin-bottom: 3em;
+}
+
+footer p {
+	margin : 0;
+	text-align : center;
+	padding: 2em;
+}
+.pc{
+	font-variant: small-caps;
+}
+.aodi{
+	border-radius: 2em;
+}
+a:hover{
+	font-style: italic;
+}

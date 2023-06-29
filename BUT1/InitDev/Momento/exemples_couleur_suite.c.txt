@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+#define UNDERLINE "\e[4m"
+#define RESET "\e[0m"
+
+// codes pour 256 couleurs
+
+int main(void)
+{
+    int i, j;
+    
+    printf("\n" UNDERLINE "background : les 256 couleurs possibles" RESET "\n");
+    for (i=0; i<256; i++) {
+    	if (i%20 == 0) printf("\n");
+    	printf("\e[48;5;%dm%4d " RESET, i, i);
+    }
+    printf("\n\n");
+    
+    printf("\n" UNDERLINE "foreground normal : les 256 couleurs possibles" RESET "\n");
+    for (i=0; i<256; i++) {
+    	if (i%20 == 0) printf("\n");
+    	printf("\e[38;5;%dm%4d" RESET, i, i);
+    }    
+    printf("\n\n");
+    
+    printf("\n" UNDERLINE "foreground gras : les 256 couleurs possibles" RESET "\n");
+    for (i=0; i<256; i++) {
+    	if (i%20 == 0) printf("\n");
+    	printf("\e[1;38;5;%dm%4d" RESET, i, i);
+    }
+    printf("\n\n");
+}

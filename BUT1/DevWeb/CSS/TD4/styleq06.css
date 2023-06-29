@@ -1,0 +1,79 @@
+/*
+one piece :
+#4AA4BA bleu
+#AE7558 brun
+#E18474 rouge
+#E0BF81 jaune
+#586359 gris foncé
+#CEECF8 bleu clair
+*/
+
+body{
+	font-family : Arial, sans-serif;
+	text-align : justify ;
+  background : #E0BF81;
+  margin: 0;
+}
+
+header {
+  background :#E18474;
+  color: white;
+  margin: 0;
+
+}
+header > h1{
+  text-align: center;
+}
+
+section > h1{
+  text-align: center;
+  background-color: #586359;
+  color: white;
+  line-height: 2em;
+}
+article > h1{
+  border-bottom: 2px black solid;
+  font-size: 25px;
+  padding-bottom: 1em;
+}
+
+section {
+  padding: 1em;
+  background : rgba(255,255,255,0.5);
+  background-image: url(/images/persan.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  max-width: 60em;
+  margin: auto;
+  background-attachment: fixed;
+}
+
+li{
+	list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+nav > ul > li > ul{
+  display: none;
+}
+nav{
+  padding-left: 25%;
+}
+nav > ul > li{
+  width: 30%;
+  display: inline-block;
+}
+article{
+  padding:2em;
+  background-color: rgba(255,255,255,0.6);
+}
+article > div{
+  width: 49%;
+  background-color: #E0BF81;
+  display: inline-block;
+  margin-bottom: 2px;
+}

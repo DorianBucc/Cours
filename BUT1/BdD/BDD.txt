@@ -1,0 +1,113 @@
+SELECT cequel'onveutafficher
+FROM prendrelestabledebdd souhaité, ...
+GROUP BY 				//groupé par un facteur commun
+HAVING COUNT(*) >= 2			//selectioné les case similaire par un facteur commun (dans l'exemple : si il apparai 2 fois ou plus)
+AND
+
+
+fonction de calcule sql
+SUM pour sommme
+COUNT pour compter
+
+
+
+
+(*) pour selectionner tous
+
+1)
+SELECT * 
+FROM `prestation`
+
+2)
+SELECT * 
+FROM `usager`
+
+3)
+SELECT nom,num_carte 
+FROM usager
+
+4)
+SELECT AVG(montant) 
+FROM depot
+
+5)
+SELECT nom 
+FROM `usager` 
+WHERE mt_caution = "5"
+
+6)
+SELECT nom 
+FROM usager u, categorie c 
+WHERE c.lib_categ = "petits revenus" 
+AND c.num_categ = u.num_categ
+
+7)
+SELECT nom 
+FROM usager u, depot c 
+WHERE c.num_carte = u.num_carte AND c.montant >= 20
+
+8)
+SELECT COUNT(*) 
+FROM usager,depot 
+WHERE usager.nom = "Pierre L." 
+AND usager.num_carte = depot.num_carte
+
+9)
+SELECT DISTINCT nom 
+FROM usager,ticket,achat,prestation 
+WHERE prestation.type_prest = "supplément chantilly" 
+AND prestation.num_prest = achat.num_prest 
+AND achat.num_ticket = ticket.num_ticket 
+AND ticket.num_carte = usager.num_carte
+
+10)
+
+11)
+
+12)
+SELECT nom 
+FROM usager,prestation,achat,ticket 
+WHERE prestation.type_prest = "bière" 
+AND prestation.num_prest = achat.num_prest 
+AND ticket.num_ticket = achat.num_ticket 
+AND ticket.num_carte = usager.num_carte
+
+
+1)
+SELECT SUM(achat.nb_prest*tarif.prix) as Recette 
+FROM achat,usager,tarif,ticket 
+WHERE ticket.date_achat = "2021-04-01" 
+AND ticket.num_ticket = achat.num_ticket 
+AND achat.num_prest = tarif.num_prest 
+AND ticket.num_carte = usager.num_carte 
+AND usager.num_categ = tarif.num_categ
+
+
+2)
+SELECT SUM(achat.nb_prest*tarif.prix) as Recette 
+FROM achat,usager,tarif,ticket,prestation 
+WHERE ticket.date_achat = "2018-05-24" 
+AND ticket.num_ticket = achat.num_ticket 
+AND achat.num_prest = tarif.num_prest 
+AND ticket.num_carte = usager.num_carte 
+AND usager.num_categ = tarif.num_categ 
+AND prestation.num_prest = achat.num_prest 
+AND prestation.type_prest = "supplément chantilly"
+
+
+3)
+SELECT usager.nom 
+FROM usager,achat,prestation,ticket 
+WHERE prestation.type_prest = "supplément chantilly"
+AND prestation.num_prest = achat.num_prest
+AND achat.nb_prest >= 2
+AND achat.num_ticket = ticket.num_ticket
+AND ticket.num_carte = usager.num_carte
+
+4\)
+5)
+SELECT ticket.date_achat 
+FROM ticket,usager 
+WHERE usager.nom = "Michel A." 
+AND usager.num_carte = ticket.num_carte
+

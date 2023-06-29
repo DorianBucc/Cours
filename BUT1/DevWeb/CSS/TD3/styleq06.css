@@ -1,0 +1,50 @@
+/*
+one piece :
+#4AA4BA bleu
+#AE7558 brun
+#E18474 rouge
+#E0BF81 jaune
+#586359 gris foncé
+#CEECF8 bleu clair
+*/
+
+body{
+	font-family : Arial, sans-serif;
+	text-align : justify ;
+  background : #E0BF81;
+}
+
+header {
+  background :#E18474;
+  color: white;
+  margin: 0;
+
+}
+header > h1{
+  text-align: center;
+}
+section > h1{
+  text-align: center;
+  background-color: #586359;
+  color: white;
+}
+
+section {
+  background : rgba(255,255,255,0.5);
+  background-image: url(/images/persan.jpg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 30px;
+  background-size: 50%;
+}
+li{
+	list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+article{
+  background-color: rgba(255,255,255,0.6);
+}

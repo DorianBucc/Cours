@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1</title>
+    <link rel="stylesheet" href="./css/tp1.css">
+</head>
+<body>
+    <div id="div_tp1">
+        <header>Hors Taxes ou Toutes Taxes Comprises</header>
+
+        <div class="div_tva">
+            Taux de TVA <br>
+            <div class="div_tvadetail">
+                <div>
+                    <input type="radio" name="taux_tva" id="radio_taux1">
+                    <label for="radio_taux1">5%</label>
+                </div>
+                <div>
+                    <input type="radio" name="taux_tva" id="radio_taux2">
+                    <label for="radio_taux2">10%</label>
+                </div>
+                <div>
+                    <input type="radio" name="taux_tva" id="radio_taux3">
+                    <label for="radio_taux3">20%</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="div_saisie">
+            <label for="edt_ht">HT</label> 
+            <input type="text" name="ht" id="edt_ht" placeholder="Entrer le HT" size="10" maxlength="10">
+            <label for="edt_ttc">TTC</label> 
+            <input type="text" name="ttc" id="edt_ttc" placeholder="Entrez le TTC" size="10" maxlength="10">
+            </div>
+    
+        <div class="div_bouton">
+            <input id="btn_calculer" type="button">    
+        </div>
+    </div>
+</body>
+    <script type="module" src="../controleur/tp1.js">
+    </script>
+</html>

@@ -1,0 +1,104 @@
+--------------------------------------------------------------------------------------------------------
+SELECT num_prest, type_prest
+FROM prestation p
+WHERE NOT EXISTS (SELECT num_categ
+                 FROM categorie
+                 WHERE num_categ NOT IN (
+                     SELECT num_categ
+                     FROM ticket t, usager u, achat a
+                     WHERE t.num_carte = u.num_carte
+                     AND YEAR(date_achat) = 2019
+                     AND t.num_ticket = a.num_ticket
+                     AND a.num_prest = p.num_prest))
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+CREATE TEMPORARY TABLE t1
+SELECT num_prest, COUNT(num_categ) as n1
+FROM achat a, usager u, ticket t
+WHERE a.num_ticket = t.num_ticket
+AND u.num_carte = t.num_carte
+AND YEAR(date_achat) = 2019
+GROUP BY num_prest
+;
+CREATE TEMPORARY TABLE t2
+SELECT COUNT(*) as n2
+FROM categorie
+;
+SELECT p.num_prest, type_prest
+FROM prestation p, t1, t2
+WHERE n1=n2
+AND t1.num_prest = p.num_prest
+;
+DROP TABLE t1;
+DROP TABLE t2;
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+SELECT num_carte, nom
+FROM usager u
+WHERE NOT EXISTS(
+    SELECT num_prest
+    FROM prestation
+    WHERE type_prest <> "repas normal"
+    AND num_prest NOT IN(
+        SELECT num_prest
+        FROM ticket t, achat a
+        WHERE t.num_ticket = a.num_ticket
+        AND u.num_carte = t.num_carte))
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+CREATE TEMPORARY TABLE t1
+SELECT num_carte, COUNT(num_prest) as n1
+FROM ticket t, achat a, prestation p
+WHERE t.num_ticket = a.num_ticket
+AND a.num_prest = p.num_prest
+AND type_prest <> "repas normal"
+GROUP BY num_carte
+;
+CREATE TEMPORARY TABLE t2
+SELECT COUNT(*) as n2
+FROM prestation
+WHERE type_prest <> "repas normal"
+;
+SELECT num_carte, nom
+FROM usager u, t1, t2
+WHERE n1 = n2
+AND n1, num_carte = u.num_carte
+;
+DROP TABLE t1;
+DROP TABLE t2;
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+
+CREATE TEMPORARY TABLE t1
+SELECT num_prest, COUNT(DISTINCT date_achat) as n1
+FROM ticket t, achat a
+WHERE t.num_ticket = a.num_ticket
+GROUP BY num_prest ;
+
+CREATE TEMPORARY TABLE t2
+SELECT COUNT(DISTINCT date_achat) as n2
+FROM ticket;
+
+SELECT p.num_prest, type_prest
+FROM prestation p, t1, t2
+WHERE n1 = n2
+AND t1.num_prest=p.num_prest;
+
+DROP TABLE t1;
+DROP TABLE t2;
+
+
+--------------------------------------------------------------------------------------------------------
+

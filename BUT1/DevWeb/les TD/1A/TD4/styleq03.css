@@ -1,0 +1,84 @@
+/*
+one piece :
+#4AA4BA bleu
+#AE7558 brun
+#E18474 rouge
+#E0BF81 jaune
+#586359 gris foncé
+#CEECF8 bleu clair
+*/
+
+body{
+	font-family : Arial, sans-serif;
+	text-align : justify ;
+	background-color : #586359;
+}
+
+section {
+	background-color : #586359;
+}
+
+article {
+	background-color : #E18474;
+}
+
+p {
+	background-color :  #E0BF81;
+}
+
+
+h1 {
+	color : white;
+	font-weight : lighter;
+}
+
+section > h1{
+	text-align : center;
+}
+
+body, h1, p{
+	margin : 0;
+}
+
+section{
+	padding : 2%;
+	max-width : 1100px;
+	margin : auto;
+	background: rgba(255,255, 255, 0.2);
+}
+
+p{
+	padding : 2%;
+	margin : 10px 0;
+}
+
+article{
+	padding : 2%;
+	margin-bottom : 2%;
+}
+
+figure{
+	text-align : center;
+	background-color: transparent;
+}
+
+figure img{
+	height : 300px;
+	margin : 1%;
+	border : 3px solid white;
+	box-shadow: 10px 10px 3px rgba(0,0,0,0.3);
+}
+
+footer {
+	background-color : #586359;
+}
+
+footer p {
+	margin : 0;
+	text-align : center;
+}
+
+footer a {
+	text-decoration : none;
+	color : #586359;
+}

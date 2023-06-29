@@ -1,0 +1,27 @@
+/*
+one piece :
+#4AA4BA bleu
+#AE7558 brun
+#E18474 rouge
+#E0BF81 jaune
+#586359 gris foncé
+#CEECF8 bleu clair
+*/
+
+body{
+	font-family : Arial, sans-serif;
+	text-align : justify ;
+  background : #4AA4BA;
+}
+
+header {
+  background :#CEECF8;
+}
+
+section {
+  background : rgba(255,255,255,0.5);
+}
+
+/* à compléter (reprendre les styles la version ordinateur et modifier)*/
+
+

@@ -1,0 +1,11 @@
+Les animaux
+Les animaux de compagnie
+Les chats
+Les chiens
+Les rongeurs domestiques
+Hamster
+Lapin
+...
+Les animaux domestiques
+Poule
+Chèvre
