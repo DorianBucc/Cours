@@ -6,5 +6,6 @@ git add BUT1
 git add BUT2
 git add English
 git add Japonais
+git add Anime.txt
 git commit -am "AutomateDodo"
 git push
