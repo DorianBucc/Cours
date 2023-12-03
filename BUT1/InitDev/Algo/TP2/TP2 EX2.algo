@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<sauvegarde_eva>
+    <!--Ce document est un fichier de sauvegarde Eva 4.0. Pour plus de détails, merci de visiter notre site http://eva.tuxfamily.org/ .-->
+    <en_tete>
+        <nom_projet>TP2 EX2.algo</nom_projet>
+        <classe_sauvegarde>eva.gui.systeme.sauvegarde.SauvegardeAssiste</classe_sauvegarde>
+    </en_tete>
+    <algo_assiste>
+        <declarations>
+            <variable nom="datechiffre" type="entier"/>
+            <variable nom="an" type="entier"/>
+            <variable nom="mois" type="entier"/>
+            <variable nom="jour" type="entier"/>
+            <variable nom="van" type="booleen"/>
+            <variable nom="vmois" type="booleen"/>
+            <variable nom="biss" type="booleen"/>
+            <variable nom="dv" type="booleen"/>
+            <variable nom="lan" type="entier"/>
+            <variable nom="ljour" type="entier"/>
+            <variable nom="lmois" type="entier"/>
+            <variable nom="datenais" type="entier"/>
+            <variable nom="nan" type="entier"/>
+            <variable nom="nmois" type="entier"/>
+            <variable nom="njour" type="entier"/>
+            <variable nom="age" type="entier"/>
+            <module nom="Valan">
+                <signature>
+                    <parametre_formel mode="entree" nom="an" type="entier"/>
+                    <parametre_formel mode="entree" nom="jour" type="entier"/>
+                    <parametre_formel mode="entree" nom="mois" type="entier"/>
+                    <parametre_formel mode="sortie" nom="dv" type="booleen"/>
+                    <parametre_formel mode="entree" nom="biss" type="booleen"/>
+                </signature>
+                <declarations>
+                    <variable nom="van" type="booleen"/>
+                    <variable nom="vmois" type="booleen"/>
+                    <variable nom="vjour" type="booleen"/>
+                    <variable nom="moisl" type="booleen"/>
+                </declarations>
+                <instructions>
+                    <affectation>
+                        <membre_gauche>van</membre_gauche>
+                        <membre_droit>an &lt;= 9999 et an &gt;= 1583</membre_droit>
+                    </affectation>
+                    <affectation>
+                        <membre_gauche>vmois</membre_gauche>
+                        <membre_droit>mois &gt;= 1 et mois &lt;= 12</membre_droit>
+                    </affectation>
+                    <affectation>
+                        <membre_gauche>moisl</membre_gauche>
+                        <membre_droit>(mois = 1) ou (mois = 3) ou (mois = 5) ou (mois = 7) ou (mois = 8) ou (mois = 10) ou (mois = 12)</membre_droit>
+                    </affectation>
+                    <affectation>
+                        <membre_gauche>vjour</membre_gauche>
+                        <membre_droit>faux</membre_droit>
+                    </affectation>
+                    <si>
+                        <conditionnelle>
+                            <condition>jour &lt;= 31 et moisl = vrai</condition>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>vjour</membre_gauche>
+                                    <membre_droit>vrai</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </conditionnelle>
+                        <conditionnelle>
+                            <condition>jour &lt;= 30 et moisl = faux et mois &lt;&gt; 2</condition>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>vjour</membre_gauche>
+                                    <membre_droit>vrai</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </conditionnelle>
+                        <conditionnelle>
+                            <condition>jour &lt;= 28 et mois = 2 et biss = faux</condition>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>vjour</membre_gauche>
+                                    <membre_droit>vrai</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </conditionnelle>
+                        <conditionnelle>
+                            <condition>jour &lt;= 29 et mois = 2 et biss = vrai</condition>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>vjour</membre_gauche>
+                                    <membre_droit>vrai</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </conditionnelle>
+                    </si>
+                    <affectation>
+                        <membre_gauche>dv</membre_gauche>
+                        <membre_droit>van = vrai et vmois = vrai et vjour = vrai</membre_droit>
+                    </affectation>
+                </instructions>
+            </module>
+            <module nom="datechi">
+                <signature>
+                    <parametre_formel mode="entree" nom="dc" type="entier"/>
+                    <parametre_formel mode="sortie" nom="an" type="entier"/>
+                    <parametre_formel mode="sortie" nom="mois" type="entier"/>
+                    <parametre_formel mode="sortie" nom="jour" type="entier"/>
+                </signature>
+                <declarations/>
+                <instructions>
+                    <affectation>
+                        <membre_gauche>an</membre_gauche>
+                        <membre_droit>dc mod 10000</membre_droit>
+                    </affectation>
+                    <affectation>
+                        <membre_gauche>jour</membre_gauche>
+                        <membre_droit>dc div 1000000</membre_droit>
+                    </affectation>
+                    <affectation>
+                        <membre_gauche>mois</membre_gauche>
+                        <membre_droit>(dc div 10000) mod 100</membre_droit>
+                    </affectation>
+                </instructions>
+            </module>
+            <module nom="bis">
+                <signature>
+                    <parametre_formel mode="entree" nom="an" type="entier"/>
+                    <parametre_formel mode="sortie" nom="biss" type="booleen"/>
+                </signature>
+                <declarations/>
+                <instructions>
+                    <affectation>
+                        <membre_gauche>biss</membre_gauche>
+                        <membre_droit>an mod 400 = 0 ou (an mod 4 = 0 et an div 100 &lt;&gt; 0)</membre_droit>
+                    </affectation>
+                </instructions>
+            </module>
+            <module nom="lendemain">
+                <signature>
+                    <parametre_formel mode="entree" nom="an" type="entier"/>
+                    <parametre_formel mode="entree" nom="mois" type="entier"/>
+                    <parametre_formel mode="entree" nom="jour" type="entier"/>
+                    <parametre_formel mode="entree" nom="biss" type="booleen"/>
+                    <parametre_formel mode="sortie" nom="afan" type="entier"/>
+                    <parametre_formel mode="sortie" nom="afmois" type="entier"/>
+                    <parametre_formel mode="sortie" nom="afjour" type="entier"/>
+                </signature>
+                <declarations>
+                    <variable nom="n" type="entier"/>
+                </declarations>
+                <instructions>
+                    <affectation>
+                        <membre_gauche>afan</membre_gauche>
+                        <membre_droit>an</membre_droit>
+                    </affectation>
+                    <affectation>
+                        <membre_gauche>afmois</membre_gauche>
+                        <membre_droit>mois</membre_droit>
+                    </affectation>
+                    <affectation>
+                        <membre_gauche>afjour</membre_gauche>
+                        <membre_droit>jour</membre_droit>
+                    </affectation>
+                    <casde>
+                        <conditionnelle>
+                            <condition>mois</condition>
+                        </conditionnelle>
+                        <cas>
+                            <expression>1,3,5,7,8,10,12</expression>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>n</membre_gauche>
+                                    <membre_droit>31</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </cas>
+                        <cas>
+                            <expression>4,6,9,11</expression>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>n</membre_gauche>
+                                    <membre_droit>30</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </cas>
+                        <cas>
+                            <expression>2</expression>
+                            <instructions>
+                                <si>
+                                    <conditionnelle>
+                                        <condition>biss = faux</condition>
+                                        <instructions>
+                                            <affectation>
+                                                <membre_gauche>n</membre_gauche>
+                                                <membre_droit>28</membre_droit>
+                                            </affectation>
+                                        </instructions>
+                                    </conditionnelle>
+                                    <sinon>
+                                        <instructions>
+                                            <affectation>
+                                                <membre_gauche>n</membre_gauche>
+                                                <membre_droit>29</membre_droit>
+                                            </affectation>
+                                        </instructions>
+                                    </sinon>
+                                </si>
+                            </instructions>
+                        </cas>
+                    </casde>
+                    <si>
+                        <conditionnelle>
+                            <condition>jour &lt; n</condition>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>afjour</membre_gauche>
+                                    <membre_droit>jour +1</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </conditionnelle>
+                        <conditionnelle>
+                            <condition>jour = n et mois = 12</condition>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>afjour</membre_gauche>
+                                    <membre_droit>1</membre_droit>
+                                </affectation>
+                                <affectation>
+                                    <membre_gauche>afmois</membre_gauche>
+                                    <membre_droit>1</membre_droit>
+                                </affectation>
+                                <affectation>
+                                    <membre_gauche>afan</membre_gauche>
+                                    <membre_droit>an + 1</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </conditionnelle>
+                        <sinon>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>afjour</membre_gauche>
+                                    <membre_droit>1</membre_droit>
+                                </affectation>
+                                <affectation>
+                                    <membre_gauche>afmois</membre_gauche>
+                                    <membre_droit>mois + 1</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </sinon>
+                    </si>
+                </instructions>
+            </module>
+            <module nom="Age">
+                <signature>
+                    <parametre_formel mode="entree" nom="an" type="entier"/>
+                    <parametre_formel mode="entree" nom="nan" type="entier"/>
+                    <parametre_formel mode="sortie" nom="ages" type="entier"/>
+                    <parametre_formel mode="entree" nom="mois" type="entier"/>
+                    <parametre_formel mode="entree" nom="jour" type="entier"/>
+                    <parametre_formel mode="entree" nom="njour" type="entier"/>
+                    <parametre_formel mode="entree" nom="nmois" type="entier"/>
+                </signature>
+                <declarations/>
+                <instructions>
+                    <si>
+                        <conditionnelle>
+                            <condition>mois&gt;nmois ou (mois = nmois et jour &gt;= njour)</condition>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>ages</membre_gauche>
+                                    <membre_droit>an - nan</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </conditionnelle>
+                        <sinon>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>ages</membre_gauche>
+                                    <membre_droit>an - nan -1</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </sinon>
+                    </si>
+                </instructions>
+            </module>
+            <module nom="Agej">
+                <signature/>
+                <declarations/>
+                <instructions>
+                    <si>
+                        <conditionnelle>
+                            <condition>mois&gt;nmois ou (mois = nmois et jour &gt;= njour)</condition>
+                            <instructions/>
+                        </conditionnelle>
+                        <sinon>
+                            <instructions/>
+                        </sinon>
+                    </si>
+                </instructions>
+            </module>
+        </declarations>
+        <instructions>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"Saisir une date"</parametre_effectif>
+            </appel_module>
+            <appel_module nom="lire">
+                <parametre_effectif>datechiffre</parametre_effectif>
+            </appel_module>
+            <appel_module nom="datechi">
+                <parametre_effectif>datechiffre</parametre_effectif>
+                <parametre_effectif>an</parametre_effectif>
+                <parametre_effectif>mois</parametre_effectif>
+                <parametre_effectif>jour</parametre_effectif>
+            </appel_module>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"Saisir votre date de naissance"</parametre_effectif>
+            </appel_module>
+            <appel_module nom="lire">
+                <parametre_effectif>datenais</parametre_effectif>
+            </appel_module>
+            <appel_module nom="datechi">
+                <parametre_effectif>datenais</parametre_effectif>
+                <parametre_effectif>nan</parametre_effectif>
+                <parametre_effectif>nmois</parametre_effectif>
+                <parametre_effectif>njour</parametre_effectif>
+            </appel_module>
+            <appel_module nom="bis">
+                <parametre_effectif>an</parametre_effectif>
+                <parametre_effectif>biss</parametre_effectif>
+            </appel_module>
+            <appel_module nom="Valan">
+                <parametre_effectif>an</parametre_effectif>
+                <parametre_effectif>jour</parametre_effectif>
+                <parametre_effectif>mois</parametre_effectif>
+                <parametre_effectif>dv</parametre_effectif>
+                <parametre_effectif>biss</parametre_effectif>
+            </appel_module>
+            <appel_module nom="Valan">
+                <parametre_effectif>nan</parametre_effectif>
+                <parametre_effectif>njour</parametre_effectif>
+                <parametre_effectif>nmois</parametre_effectif>
+                <parametre_effectif>dv</parametre_effectif>
+                <parametre_effectif>biss</parametre_effectif>
+            </appel_module>
+            <si>
+                <conditionnelle>
+                    <condition>dv = vrai</condition>
+                    <instructions>
+                        <appel_module nom="ecrire">
+                            <parametre_effectif>"La date est valide pour : "</parametre_effectif>
+                            <parametre_effectif>jour</parametre_effectif>
+                            <parametre_effectif>"/"</parametre_effectif>
+                            <parametre_effectif>mois</parametre_effectif>
+                            <parametre_effectif>"/"</parametre_effectif>
+                            <parametre_effectif>an</parametre_effectif>
+                        </appel_module>
+                        <appel_module nom="lendemain">
+                            <parametre_effectif>an</parametre_effectif>
+                            <parametre_effectif>mois</parametre_effectif>
+                            <parametre_effectif>jour</parametre_effectif>
+                            <parametre_effectif>biss</parametre_effectif>
+                            <parametre_effectif>lan</parametre_effectif>
+                            <parametre_effectif>lmois</parametre_effectif>
+                            <parametre_effectif>ljour</parametre_effectif>
+                        </appel_module>
+                        <appel_module nom="ecrire">
+                            <parametre_effectif>"Le lendemain on sera le : "</parametre_effectif>
+                            <parametre_effectif>ljour</parametre_effectif>
+                            <parametre_effectif>"/"</parametre_effectif>
+                            <parametre_effectif>lmois</parametre_effectif>
+                            <parametre_effectif>"/"</parametre_effectif>
+                            <parametre_effectif>lan</parametre_effectif>
+                        </appel_module>
+                        <appel_module nom="Age">
+                            <parametre_effectif>an</parametre_effectif>
+                            <parametre_effectif>nan</parametre_effectif>
+                            <parametre_effectif>age</parametre_effectif>
+                            <parametre_effectif>mois</parametre_effectif>
+                            <parametre_effectif>jour</parametre_effectif>
+                            <parametre_effectif>njour</parametre_effectif>
+                            <parametre_effectif>nmois</parametre_effectif>
+                        </appel_module>
+                        <appel_module nom="ecrire">
+                            <parametre_effectif>"Votre age est de "</parametre_effectif>
+                            <parametre_effectif>age</parametre_effectif>
+                            <parametre_effectif>" ans"</parametre_effectif>
+                        </appel_module>
+                    </instructions>
+                </conditionnelle>
+                <sinon>
+                    <instructions>
+                        <appel_module nom="ecrire">
+                            <parametre_effectif>"il y a une erreur"</parametre_effectif>
+                        </appel_module>
+                    </instructions>
+                </sinon>
+            </si>
+        </instructions>
+    </algo_assiste>
+</sauvegarde_eva>

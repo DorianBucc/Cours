@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<sauvegarde_eva>
+    <!--Ce document est un fichier de sauvegarde Eva 4.0. Pour plus de détails, merci de visiter notre site http://eva.tuxfamily.org/ .-->
+    <en_tete>
+        <nom_projet>tab.algo</nom_projet>
+        <classe_sauvegarde>eva.gui.systeme.sauvegarde.SauvegardeAssiste</classe_sauvegarde>
+    </en_tete>
+    <algo_assiste>
+        <declarations>
+            <variable constante="vrai" nom="max" type="entier">
+                <expression>100</expression>
+            </variable>
+            <type_tableau nom="Tab" type="entier">
+                <dimension>
+                    <borne_inf>1</borne_inf>
+                    <borne_sup>max</borne_sup>
+                </dimension>
+            </type_tableau>
+            <variable nom="n" type="entier"/>
+            <variable nom="i" type="entier"/>
+            <variable nom="tab" type="Tab"/>
+        </declarations>
+        <instructions>
+            <repeter>
+                <condition>max &gt;= n et n &gt;= 2</condition>
+                <instructions>
+                    <appel_module nom="ecrire">
+                        <parametre_effectif>"Saisir"</parametre_effectif>
+                    </appel_module>
+                    <appel_module nom="lire">
+                        <parametre_effectif>n</parametre_effectif>
+                    </appel_module>
+                </instructions>
+            </repeter>
+            <pour>
+                <compteur>i</compteur>
+                <pas>1</pas>
+                <borne_inf>1</borne_inf>
+                <borne_sup>n</borne_sup>
+                <instructions>
+                    <affectation>
+                        <membre_gauche>tab[i]</membre_gauche>
+                        <membre_droit>i*i</membre_droit>
+                    </affectation>
+                </instructions>
+            </pour>
+            <pour>
+                <compteur>i</compteur>
+                <pas>1</pas>
+                <borne_inf>1</borne_inf>
+                <borne_sup>n</borne_sup>
+                <instructions>
+                    <appel_module nom="ecrire">
+                        <parametre_effectif>"tab de "</parametre_effectif>
+                        <parametre_effectif>i</parametre_effectif>
+                        <parametre_effectif>" à "</parametre_effectif>
+                        <parametre_effectif>tab[i]</parametre_effectif>
+                    </appel_module>
+                </instructions>
+            </pour>
+        </instructions>
+    </algo_assiste>
+</sauvegarde_eva>

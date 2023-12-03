@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<sauvegarde_eva>
+    <!--Ce document est un fichier de sauvegarde Eva 4.0. Pour plus de détails, merci de visiter notre site http://eva.tuxfamily.org/ .-->
+    <en_tete>
+        <nom_projet>fibo.algo</nom_projet>
+        <classe_sauvegarde>eva.gui.systeme.sauvegarde.SauvegardeAssiste</classe_sauvegarde>
+    </en_tete>
+    <algo_assiste>
+        <declarations>
+            <variable nom="nb" type="entier"/>
+            <variable nom="res" type="entier"/>
+            <fonction nom="u" type="entier">
+                <signature>
+                    <parametre_formel mode="entree" nom="nb" type="entier"/>
+                </signature>
+                <declarations>
+                    <variable nom="res" type="entier"/>
+                    <variable nom="i" type="entier"/>
+                    <variable nom="un2" type="entier"/>
+                    <variable nom="un1" type="entier"/>
+                </declarations>
+                <instructions>
+                    <affectation>
+                        <membre_gauche>res</membre_gauche>
+                        <membre_droit>0</membre_droit>
+                    </affectation>
+                    <si>
+                        <conditionnelle>
+                            <condition>nb = 1</condition>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>res</membre_gauche>
+                                    <membre_droit>1</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </conditionnelle>
+                        <sinon>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>res</membre_gauche>
+                                    <membre_droit>1</membre_droit>
+                                </affectation>
+                                <affectation>
+                                    <membre_gauche>un2</membre_gauche>
+                                    <membre_droit>0</membre_droit>
+                                </affectation>
+                                <affectation>
+                                    <membre_gauche>un1</membre_gauche>
+                                    <membre_droit>1</membre_droit>
+                                </affectation>
+                                <pour>
+                                    <compteur>i</compteur>
+                                    <pas>1</pas>
+                                    <borne_inf>2</borne_inf>
+                                    <borne_sup>nb</borne_sup>
+                                    <instructions>
+                                        <affectation>
+                                            <membre_gauche>res</membre_gauche>
+                                            <membre_droit>un2 + un1</membre_droit>
+                                        </affectation>
+                                        <affectation>
+                                            <membre_gauche>un2</membre_gauche>
+                                            <membre_droit>un1</membre_droit>
+                                        </affectation>
+                                        <affectation>
+                                            <membre_gauche>un1</membre_gauche>
+                                            <membre_droit>res</membre_droit>
+                                        </affectation>
+                                    </instructions>
+                                </pour>
+                            </instructions>
+                        </sinon>
+                    </si>
+                    <affectation>
+                        <membre_gauche>u</membre_gauche>
+                        <membre_droit>res</membre_droit>
+                    </affectation>
+                </instructions>
+            </fonction>
+        </declarations>
+        <instructions>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"saisir"</parametre_effectif>
+            </appel_module>
+            <appel_module nom="lire">
+                <parametre_effectif>nb</parametre_effectif>
+            </appel_module>
+            <affectation>
+                <membre_gauche>res</membre_gauche>
+                <membre_droit>u(nb)</membre_droit>
+            </affectation>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"u ("</parametre_effectif>
+                <parametre_effectif>nb</parametre_effectif>
+                <parametre_effectif>") = "</parametre_effectif>
+                <parametre_effectif>res</parametre_effectif>
+            </appel_module>
+        </instructions>
+    </algo_assiste>
+</sauvegarde_eva>

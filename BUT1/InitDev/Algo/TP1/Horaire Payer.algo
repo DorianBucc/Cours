@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<sauvegarde_eva>
+    <!--Ce document est un fichier de sauvegarde Eva 4.0. Pour plus de détails, merci de visiter notre site http://eva.tuxfamily.org/ .-->
+    <en_tete>
+        <nom_projet>Horaire Payer.algo</nom_projet>
+        <classe_sauvegarde>eva.gui.systeme.sauvegarde.SauvegardeAssiste</classe_sauvegarde>
+    </en_tete>
+    <algo_assiste>
+        <declarations>
+            <variable nom="ha" type="entier"/>
+            <variable nom="ma" type="entier"/>
+            <variable nom="hd" type="entier"/>
+            <variable nom="md" type="entier"/>
+            <variable nom="th" type="entier"/>
+            <variable nom="P" type="entier"/>
+        </declarations>
+        <instructions>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"veullier entrer l'heure d'arrivé et de Départ"</parametre_effectif>
+            </appel_module>
+            <appel_module nom="lire">
+                <parametre_effectif>ha</parametre_effectif>
+                <parametre_effectif>ma</parametre_effectif>
+                <parametre_effectif>hd</parametre_effectif>
+                <parametre_effectif>md</parametre_effectif>
+            </appel_module>
+            <affectation>
+                <membre_gauche>ha</membre_gauche>
+                <membre_droit>ha*60+ma</membre_droit>
+            </affectation>
+            <affectation>
+                <membre_gauche>hd</membre_gauche>
+                <membre_droit>hd*60+md</membre_droit>
+            </affectation>
+            <affectation>
+                <membre_gauche>th</membre_gauche>
+                <membre_droit>1080</membre_droit>
+            </affectation>
+            <affectation>
+                <membre_gauche>P</membre_gauche>
+                <membre_droit>0</membre_droit>
+            </affectation>
+            <tant_que>
+                <instructions>
+                    <si>
+                        <conditionnelle>
+                            <condition>th &gt;= ha et th &lt; 1290</condition>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>P</membre_gauche>
+                                    <membre_droit>P + 4</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </conditionnelle>
+                        <conditionnelle>
+                            <condition>th &gt;= 1290 et th &gt;= ha</condition>
+                            <instructions>
+                                <affectation>
+                                    <membre_gauche>P</membre_gauche>
+                                    <membre_droit>P + 5</membre_droit>
+                                </affectation>
+                            </instructions>
+                        </conditionnelle>
+                    </si>
+                    <affectation>
+                        <membre_gauche>th</membre_gauche>
+                        <membre_droit>th + 30</membre_droit>
+                    </affectation>
+                </instructions>
+                <condition>th &lt; hd</condition>
+            </tant_que>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"Elle aura : "</parametre_effectif>
+                <parametre_effectif>P</parametre_effectif>
+                <parametre_effectif>"&#8364;"</parametre_effectif>
+            </appel_module>
+        </instructions>
+    </algo_assiste>
+</sauvegarde_eva>

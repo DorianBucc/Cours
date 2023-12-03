@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<sauvegarde_eva>
+    <!--Ce document est un fichier de sauvegarde Eva 4.0. Pour plus de détails, merci de visiter notre site http://eva.tuxfamily.org/ .-->
+    <en_tete>
+        <nom_projet>Equation du second degré.algo</nom_projet>
+        <classe_sauvegarde>eva.gui.systeme.sauvegarde.SauvegardeAssiste</classe_sauvegarde>
+    </en_tete>
+    <algo_assiste>
+        <declarations>
+            <variable nom="a" type="reel"/>
+            <variable nom="b" type="reel"/>
+            <variable nom="c" type="reel"/>
+            <variable nom="cal" type="reel"/>
+            <variable nom="x1" type="reel"/>
+            <variable nom="x2" type="reel"/>
+        </declarations>
+        <instructions>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"Saisir les valeur de a, b et c"</parametre_effectif>
+            </appel_module>
+            <appel_module nom="lire">
+                <parametre_effectif>a</parametre_effectif>
+                <parametre_effectif>b</parametre_effectif>
+                <parametre_effectif>c</parametre_effectif>
+            </appel_module>
+            <affectation>
+                <membre_gauche>cal</membre_gauche>
+                <membre_droit>(b*b)-4*a*c</membre_droit>
+            </affectation>
+            <si>
+                <conditionnelle>
+                    <condition>cal&lt;0</condition>
+                    <instructions>
+                        <appel_module nom="ecrire">
+                            <parametre_effectif>"Pas de solution"</parametre_effectif>
+                        </appel_module>
+                    </instructions>
+                </conditionnelle>
+                <conditionnelle>
+                    <condition>cal&gt;0</condition>
+                    <instructions>
+                        <affectation>
+                            <membre_gauche>x1</membre_gauche>
+                            <membre_droit>(-b-sqrt(cal))/(2*a)</membre_droit>
+                        </affectation>
+                        <affectation>
+                            <membre_gauche>x2</membre_gauche>
+                            <membre_droit>(-b+sqrt(cal))/(2*a)</membre_droit>
+                        </affectation>
+                        <appel_module nom="ecrire">
+                            <parametre_effectif>"2 racines distinctes"</parametre_effectif>
+                        </appel_module>
+                        <appel_module nom="ecrire">
+                            <parametre_effectif>"x1 = "</parametre_effectif>
+                            <parametre_effectif>x1</parametre_effectif>
+                            <parametre_effectif>" x2 = "</parametre_effectif>
+                            <parametre_effectif>x2</parametre_effectif>
+                        </appel_module>
+                    </instructions>
+                </conditionnelle>
+                <sinon>
+                    <instructions>
+                        <appel_module nom="ecrire">
+                            <parametre_effectif>"1 racines double"</parametre_effectif>
+                        </appel_module>
+                        <affectation>
+                            <membre_gauche>x1</membre_gauche>
+                            <membre_droit>-b/(2*a)</membre_droit>
+                        </affectation>
+                        <appel_module nom="ecrire">
+                            <parametre_effectif>"x1 = "</parametre_effectif>
+                            <parametre_effectif>x1</parametre_effectif>
+                        </appel_module>
+                    </instructions>
+                </sinon>
+            </si>
+        </instructions>
+    </algo_assiste>
+</sauvegarde_eva>
