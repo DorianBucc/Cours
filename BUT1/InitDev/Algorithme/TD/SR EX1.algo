@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<sauvegarde_eva>
+    <!--Ce document est un fichier de sauvegarde Eva 4.0. Pour plus de détails, merci de visiter notre site http://eva.tuxfamily.org/ .-->
+    <en_tete>
+        <nom_projet>SR EX1.algo</nom_projet>
+        <classe_sauvegarde>eva.gui.systeme.sauvegarde.SauvegardeAssiste</classe_sauvegarde>
+    </en_tete>
+    <algo_assiste>
+        <declarations>
+            <variable nom="a" type="entier"/>
+            <variable nom="b" type="entier"/>
+            <fonction nom="fn" type="entier">
+                <signature>
+                    <parametre_formel mode="entree" nom="n" type="entier"/>
+                </signature>
+                <declarations>
+                    <variable nom="nb" type="entier"/>
+                    <variable nom="p" type="entier"/>
+                    <variable nom="i" type="entier"/>
+                </declarations>
+                <instructions>
+                    <affectation>
+                        <membre_gauche>nb</membre_gauche>
+                        <membre_droit>1</membre_droit>
+                    </affectation>
+                    <affectation>
+                        <membre_gauche>p</membre_gauche>
+                        <membre_droit>1</membre_droit>
+                    </affectation>
+                    <pour>
+                        <compteur>i</compteur>
+                        <pas>1</pas>
+                        <borne_inf>1</borne_inf>
+                        <borne_sup>n</borne_sup>
+                        <instructions>
+                            <affectation>
+                                <membre_gauche>p</membre_gauche>
+                                <membre_droit>p*2</membre_droit>
+                            </affectation>
+                            <affectation>
+                                <membre_gauche>nb</membre_gauche>
+                                <membre_droit>nb*p</membre_droit>
+                            </affectation>
+                        </instructions>
+                    </pour>
+                    <affectation>
+                        <membre_gauche>fn</membre_gauche>
+                        <membre_droit>nb</membre_droit>
+                    </affectation>
+                </instructions>
+            </fonction>
+            <fonction nom="ncarre" type="entier">
+                <signature>
+                    <parametre_formel mode="entree" nom="n" type="entier"/>
+                </signature>
+                <declarations>
+                    <variable nom="i" type="entier"/>
+                    <variable nom="ci" type="entier"/>
+                    <variable nom="car" type="entier"/>
+                </declarations>
+                <instructions>
+                    <affectation>
+                        <membre_gauche>car</membre_gauche>
+                        <membre_droit>0</membre_droit>
+                    </affectation>
+                    <affectation>
+                        <membre_gauche>ci</membre_gauche>
+                        <membre_droit>1</membre_droit>
+                    </affectation>
+                    <pour>
+                        <compteur>i</compteur>
+                        <pas>1</pas>
+                        <borne_inf>1</borne_inf>
+                        <borne_sup>n</borne_sup>
+                        <instructions>
+                            <affectation>
+                                <membre_gauche>car</membre_gauche>
+                                <membre_droit>car + ci</membre_droit>
+                            </affectation>
+                            <affectation>
+                                <membre_gauche>ci</membre_gauche>
+                                <membre_droit>ci + 2</membre_droit>
+                            </affectation>
+                        </instructions>
+                    </pour>
+                    <affectation>
+                        <membre_gauche>ncarre</membre_gauche>
+                        <membre_droit>car</membre_droit>
+                    </affectation>
+                </instructions>
+            </fonction>
+            <fonction nom="facto" type="entier">
+                <signature>
+                    <parametre_formel mode="entree" nom="n" type="entier"/>
+                </signature>
+                <declarations>
+                    <variable nom="s" type="entier"/>
+                    <variable nom="i" type="entier"/>
+                </declarations>
+                <instructions>
+                    <affectation>
+                        <membre_gauche>s</membre_gauche>
+                        <membre_droit>1</membre_droit>
+                    </affectation>
+                    <affectation>
+                        <membre_gauche>i</membre_gauche>
+                        <membre_droit>n</membre_droit>
+                    </affectation>
+                    <tant_que>
+                        <instructions>
+                            <affectation>
+                                <membre_gauche>s</membre_gauche>
+                                <membre_droit>s * i</membre_droit>
+                            </affectation>
+                            <affectation>
+                                <membre_gauche>i</membre_gauche>
+                                <membre_droit>i - 1</membre_droit>
+                            </affectation>
+                        </instructions>
+                        <condition>i&lt;&gt;0</condition>
+                    </tant_que>
+                    <affectation>
+                        <membre_gauche>facto</membre_gauche>
+                        <membre_droit>s</membre_droit>
+                    </affectation>
+                </instructions>
+            </fonction>
+            <fonction nom="formuF" type="entier">
+                <signature>
+                    <parametre_formel mode="entree" nom="p" type="entier"/>
+                    <parametre_formel mode="entree" nom="n" type="entier"/>
+                </signature>
+                <declarations>
+                    <variable nom="r" type="entier"/>
+                    <variable nom="H" type="entier"/>
+                    <variable nom="B" type="entier"/>
+                </declarations>
+                <instructions>
+                    <affectation>
+                        <membre_gauche>formuF</membre_gauche>
+                        <membre_droit>(facto(n)) div (facto(p)*facto(n-p))</membre_droit>
+                    </affectation>
+                </instructions>
+            </fonction>
+        </declarations>
+        <instructions>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"Saisir"</parametre_effectif>
+            </appel_module>
+            <appel_module nom="lire">
+                <parametre_effectif>a</parametre_effectif>
+                <parametre_effectif>b</parametre_effectif>
+            </appel_module>
+            <appel_module nom="ecrire">
+                <parametre_effectif>fn(a)</parametre_effectif>
+            </appel_module>
+            <appel_module nom="ecrire">
+                <parametre_effectif>ncarre(a)</parametre_effectif>
+            </appel_module>
+            <appel_module nom="ecrire">
+                <parametre_effectif>facto(a)</parametre_effectif>
+            </appel_module>
+            <appel_module nom="ecrire">
+                <parametre_effectif>formuF(b,a)</parametre_effectif>
+            </appel_module>
+        </instructions>
+    </algo_assiste>
+</sauvegarde_eva>

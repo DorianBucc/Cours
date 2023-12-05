@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<sauvegarde_eva>
+    <!--Ce document est un fichier de sauvegarde Eva 4.0. Pour plus de détails, merci de visiter notre site http://eva.tuxfamily.org/ .-->
+    <en_tete>
+        <nom_projet>IS EX3.algo</nom_projet>
+        <classe_sauvegarde>eva.gui.systeme.sauvegarde.SauvegardeAssiste</classe_sauvegarde>
+    </en_tete>
+    <algo_assiste>
+        <declarations>
+            <variable nom="nb" type="entier"/>
+            <variable nom="sni" type="entier"/>
+            <variable nom="n" type="entier"/>
+            <variable nom="i" type="entier"/>
+        </declarations>
+        <instructions>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"Saisir un nb"</parametre_effectif>
+            </appel_module>
+            <appel_module nom="lire">
+                <parametre_effectif>nb</parametre_effectif>
+            </appel_module>
+            <affectation>
+                <membre_gauche>sni</membre_gauche>
+                <membre_droit>0</membre_droit>
+            </affectation>
+            <affectation>
+                <membre_gauche>n</membre_gauche>
+                <membre_droit>1</membre_droit>
+            </affectation>
+            <pour>
+                <compteur>i</compteur>
+                <pas>1</pas>
+                <borne_inf>1</borne_inf>
+                <borne_sup>nb</borne_sup>
+                <instructions>
+                    <affectation>
+                        <membre_gauche>sni</membre_gauche>
+                        <membre_droit>sni + n</membre_droit>
+                    </affectation>
+                    <affectation>
+                        <membre_gauche>n</membre_gauche>
+                        <membre_droit>n + 2</membre_droit>
+                    </affectation>
+                </instructions>
+            </pour>
+            <appel_module nom="ecrire">
+                <parametre_effectif>sni</parametre_effectif>
+            </appel_module>
+        </instructions>
+    </algo_assiste>
+</sauvegarde_eva>

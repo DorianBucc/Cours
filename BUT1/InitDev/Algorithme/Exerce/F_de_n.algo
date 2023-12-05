@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<sauvegarde_eva>
+    <!--Ce document est un fichier de sauvegarde Eva 4.0. Pour plus de détails, merci de visiter notre site http://eva.tuxfamily.org/ .-->
+    <en_tete>
+        <nom_projet>F_de_n.algo</nom_projet>
+        <classe_sauvegarde>eva.gui.systeme.sauvegarde.SauvegardeAssiste</classe_sauvegarde>
+    </en_tete>
+    <algo_assiste>
+        <declarations>
+            <variable nom="nb" type="entier"/>
+            <variable nom="p" type="entier"/>
+            <variable nom="i" type="entier"/>
+            <variable nom="n" type="entier"/>
+        </declarations>
+        <instructions>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"Saisir"</parametre_effectif>
+            </appel_module>
+            <appel_module nom="lire">
+                <parametre_effectif>n</parametre_effectif>
+            </appel_module>
+            <affectation>
+                <membre_gauche>nb</membre_gauche>
+                <membre_droit> 1</membre_droit>
+            </affectation>
+            <affectation>
+                <membre_gauche>p</membre_gauche>
+                <membre_droit>1</membre_droit>
+            </affectation>
+            <pour>
+                <compteur>i</compteur>
+                <pas>1</pas>
+                <borne_inf>1</borne_inf>
+                <borne_sup>n</borne_sup>
+                <instructions>
+                    <affectation>
+                        <membre_gauche>p</membre_gauche>
+                        <membre_droit>p*2</membre_droit>
+                    </affectation>
+                    <affectation>
+                        <membre_gauche>nb</membre_gauche>
+                        <membre_droit>nb*p</membre_droit>
+                    </affectation>
+                </instructions>
+            </pour>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"elle vaut "</parametre_effectif>
+                <parametre_effectif>nb</parametre_effectif>
+            </appel_module>
+        </instructions>
+    </algo_assiste>
+</sauvegarde_eva>

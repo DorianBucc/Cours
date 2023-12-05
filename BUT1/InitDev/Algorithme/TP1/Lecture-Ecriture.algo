@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<sauvegarde_eva>
+    <!--Ce document est un fichier de sauvegarde Eva 4.0. Pour plus de détails, merci de visiter notre site http://eva.tuxfamily.org/ .-->
+    <en_tete>
+        <nom_projet>Lecture-Ecriture.algo</nom_projet>
+        <classe_sauvegarde>eva.gui.systeme.sauvegarde.SauvegardeAssiste</classe_sauvegarde>
+    </en_tete>
+    <algo_assiste>
+        <declarations>
+            <variable nom="VP" type="chaine"/>
+            <variable nom="Rep" type="caractere"/>
+        </declarations>
+        <instructions>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"Veuiller saisir un message"</parametre_effectif>
+            </appel_module>
+            <appel_module nom="lire">
+                <parametre_effectif>VP</parametre_effectif>
+            </appel_module>
+            <appel_module nom="ecrire">
+                <parametre_effectif>"Souhaitez vous qu'on affiche (o,n)"</parametre_effectif>
+            </appel_module>
+            <appel_module nom="lire">
+                <parametre_effectif>Rep</parametre_effectif>
+            </appel_module>
+            <si>
+                <conditionnelle>
+                    <condition>Rep = 'o'</condition>
+                    <instructions>
+                        <appel_module nom="ecrire">
+                            <parametre_effectif>VP</parametre_effectif>
+                        </appel_module>
+                    </instructions>
+                </conditionnelle>
+                <sinon>
+                    <instructions>
+                        <appel_module nom="ecrire">
+                            <parametre_effectif>"Bonne Journée"</parametre_effectif>
+                        </appel_module>
+                    </instructions>
+                </sinon>
+            </si>
+        </instructions>
+    </algo_assiste>
+</sauvegarde_eva>
