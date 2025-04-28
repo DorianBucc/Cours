@@ -29,6 +29,10 @@ prix = TTC(banane,pomme)
 print(prix) 			# Affiche 3.6
 ```
 
+</br>
+
+---
+
 ## Exercice sur les fonctions
 
 ### Exercice 1 Utilisation simple d'une fonction
@@ -41,6 +45,10 @@ print(prix) 			# Affiche 3.6
 HelloWorld
 HelloWorld
 ```
+
+</br>
+
+---
 
 ### Exercice 2 Utilisation des paramètres
 
@@ -60,6 +68,10 @@ nom_de_fonction("Hello","World") 	// Appel de la fonction pour la déclencher
 ```
 Hello_World
 ```
+
+</br>
+
+---
 
 ### Exercice 3 Utilisation des paramètres avec le retour
 
