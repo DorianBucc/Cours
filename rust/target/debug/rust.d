@@ -1,0 +1,1 @@
+C:\Users\bucch\Git\Exercice\rust\target\debug\rust.exe: C:\Users\bucch\Git\Exercice\rust\src\ex1.rs C:\Users\bucch\Git\Exercice\rust\src\ex2.rs C:\Users\bucch\Git\Exercice\rust\src\ex3.rs C:\Users\bucch\Git\Exercice\rust\src\main.rs
