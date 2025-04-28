@@ -1,12 +1,12 @@
 # Explication rapide sur une fonction simple
 
 ```
-def Test():						# Ceci défini le nom de la fonction ainsi que c'est paramètre et son retour ( les paramètres et le retour sera expliquer plus loin)
-	print("Camron ne sait pas faire de boucle :p")	# Ici on défini le contenu et donc l'action de la fonction lorsqu'elle est appelée
+def Test():			# Ceci défini le nom de la fonction ainsi que c'est paramètre et son retour ( les paramètres et le retour sera expliquer plus loin)
+	print("afficher")	# Ici on défini le contenu et donc l'action de la fonction lorsqu'elle est appelée
 
-        						# Pour l'instant rien ne c'est passé
+        			# Pour l'instant rien ne c'est passé
 
-Test()							# C'est ici que la fonction est appelé et donc déclenche 1 fois son contenu
+Test()				# C'est ici que la fonction est appelé et donc déclenche 1 fois son contenu
 ```
 
 # Exercice sur les fonctions
