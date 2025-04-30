@@ -1,5 +1,7 @@
 [*Retour*](https://github.com/DorianBucc/Cours/tree/main/Python/Cours/README.MD)
 
+---
+
 ## Explication rapide sur les fonctions
 
 Une fonction permet d'éviter de dupliquer du code, il permet aussi de facilité la modification du code ainsi que ça lisibilité.
@@ -97,3 +99,67 @@ afficher(resultat)
 ```
 Hello_World
 ```
+
+</br>
+
+---
+
+### Exercice 4
+
+- Consigne qui modifie deux variables sans les retourner mais en les modifiants en dehors de la fonction
+
+#### Format du code à utiliser (Schématisé avec de l'algoritme)
+
+```
+fonction nom_de_fonction(param1, param2):
+	// le code à ajouter
+
+a = 5
+b = 7
+resultat = nom_de_fonction(a, b)
+afficher("La valeur de a : ", a)
+afficher("La valeur de b : ", b)
+```
+
+#### Résultat à afficher dans le terminal :
+
+```
+La valeur de a : 6
+La valeur de b : 9
+```
+
+</br>
+
+---
+
+### Exercice 5
+
+- Avec le programme correct de l'exercice 4 faite en sorte que cette fois les valeurs ne soit pas modifiées hors de la fonction
+
+#### Format du code à utiliser (Schématisé avec de l'algoritme)
+
+```
+fonction nom_de_fonction(param1, param2):
+	// le code à ajouter
+	afficher("La valeur de a dans la fonction : ", param1)
+	afficher("La valeur de b dans la fonction : ", param2)
+
+a = 5
+b = 7
+resultat = nom_de_fonction(a, b)
+afficher("La valeur de a : ", a)
+afficher("La valeur de b : ", b)
+```
+
+#### Résultat à afficher dans le terminal :
+
+```
+La valeur de a dans la fonction : 6
+La valeur de b dans la fonction : 9
+La valeur de a : 5
+La valeur de b : 7
+```
+
+</br>
+
+---

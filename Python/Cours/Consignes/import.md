@@ -1,5 +1,7 @@
 [*Retour*](https://github.com/DorianBucc/Cours/tree/main/Python/Cours/README.MD)
 
+---
+
 ## Explication sur les imports
 
 Commencé par installer un import : ```pip install requests```
@@ -27,3 +29,6 @@ from Fonction import Associe
 
 print( Associe("Hello","World") ) 
 ```
+</br>
+
+---
